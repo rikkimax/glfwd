@@ -1,0 +1,12 @@
+{
+	"name": "glfwd",
+	"description": "Port of GLFW to D.",
+	"subPackages": [
+		{
+			"name": "base",
+			"sourcePaths-windows": ["source/WindowsAPI"],
+			"sourcePaths": ["source/glfwd"],
+			"libs": ["gdi32"]
+		}
+	]
+}
