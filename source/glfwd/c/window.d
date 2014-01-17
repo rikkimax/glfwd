@@ -31,4 +31,25 @@ extern(C) {
 	
 	void glfwPollEvents();
 	void glfwWaitEvents();
+	
+	void glfwSetClipboardString(GLFWwindow* window, const char* string);
+	const char* glfwGetClipboardString(GLFWwindow* window);
+	
+	version(Windows) {
+		import windows : HWND, HGLRC;
+		
+		HWND glfwGetWin32Window(GLFWwindow* window);
+		HGLRC glfwGetWGLContext(GLFWwindow* window);
+	}
+	
+	version(Posix) {
+		// lets assume here we are using x11
+		//Display* glfwGetX11Display();
+		//Window glfwGetX11Window(GLFWwindow* window);
+		//GLXContext glfwGetGLXContext(GLFWwindow* window);
+	}
+	
+	//EGLDisplay glfwGetEGLDisplay();
+	//EGLContext glfwGetEGLContext(GLFWwindow* window);
+	//GLSurface glfwGetEGLSurface(GLFWwindow* window);
 }

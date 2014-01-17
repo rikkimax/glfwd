@@ -50,5 +50,8 @@ abstract class IWindow {
 		void* userPointer();
 		
 		ref GLFWwindowCallbacks glfwCallbacks();
+		
+		string clipboard();
+		void clipboard(string);
 	}
 }
